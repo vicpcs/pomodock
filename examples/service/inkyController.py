@@ -15,11 +15,16 @@ def show_image(resized_image):
     inky.show()
 
 def draw_jjk_image():
-    image = Image.open(EXAMPLE_ROOT / "images" / "jjk.jpg")
+    image = Image.open(EXAMPLE_ROOT / "images" / "jjk.png")
     resized_image = image.resize(inky.resolution)
     show_image(resized_image)
 
 def draw_demon_slayer_image():
     image = Image.open(EXAMPLE_ROOT / "images" / "demonSlayer.jpg")
+    resized_image = image.resize(inky.resolution)
+    show_image(resized_image)
+
+def draw_mha_image():
+    image = Image.open(EXAMPLE_ROOT / "images" / "mha.jpg")
     resized_image = image.resize(inky.resolution)
     show_image(resized_image)
