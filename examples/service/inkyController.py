@@ -12,6 +12,7 @@ def show_image(resized_image):
         inky.set_image(resized_image, saturation=0.5)
     except TypeError:
         inky.set_image(resized_image)
+    inky.show()
 
 def draw_jjk_image():
     image = Image.open(EXAMPLE_ROOT / "images" / "jjk.jpg")
