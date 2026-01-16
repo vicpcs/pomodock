@@ -6,6 +6,8 @@ EXAMPLE_ROOT = Path(__file__).resolve().parent.parent
 inky = auto(ask_user=True, verbose=True)
 
 def show_image(resized_image):
+    print("Displaying image on Inky...")
+    print(resized_image)
     try:
         inky.set_image(resized_image, saturation=0.5)
     except TypeError:
