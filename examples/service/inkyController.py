@@ -9,12 +9,12 @@ def show_image(resized_image):
     except TypeError:
         inky.set_image(resized_image)
 
-def show_jjk():
+def draw_jjk_image():
     image = Image.open("./images/jjk.jpg")
     resized_image = image.resize(inky.resolution)
     show_image(resized_image)
 
-def show_demon_slayer():
+def draw_demon_slayer_image():
     image = Image.open("./images/demonSlayer.jpg")
     resized_image = image.resize(inky.resolution)
     show_image(resized_image)
