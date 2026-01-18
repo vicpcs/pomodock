@@ -43,7 +43,8 @@ BUTTONS = [SW_A, SW_B, SW_C, SW_D]
 LABELS = ["A", "B", "C", "D"]
 
 # Image drawing functions from inkyController.py
-IMAGE_FUNCTIONS = [draw_jjk_image, draw_demon_slayer_image, draw_mha_image, write_to_display]
+# IMAGE_FUNCTIONS = [write_to_display(), draw_demon_slayer_image, draw_mha_image, write_to_display('Have a great day!')]
+IMAGE_FUNCTIONS = [write_to_display('Button A Pressed'), write_to_display('Button B Pressed'), write_to_display('Button C Pressed'), write_to_display('Button D Pressed')]
 
 # Create settings for all the input pins, we want them to be inputs
 # with a pull-up and a falling edge detection.
