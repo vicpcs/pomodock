@@ -5,7 +5,7 @@ from font_fredoka_one import FredokaOne
 def write_to_display():
     inky_display = auto()
 
-    img = Image.new("P", (inky_display.width, inky_display.height), inky_display.resolution, inky_display.WHITE)
+    img = Image.new("P", (inky_display.width, inky_display.height), inky_display.WHITE)
     draw = ImageDraw.Draw(img)
 
     font = ImageFont.truetype(FredokaOne, 48)
