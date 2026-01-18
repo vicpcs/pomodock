@@ -4,6 +4,7 @@ import gpiod
 import gpiodevice
 from gpiod.line import Bias, Direction, Edge
 from inkyController import draw_jjk_image, draw_demon_slayer_image, draw_mha_image, draw_fire_force_image
+from writeToDisplay import write_to_display
 
 print(
     """buttons.py - Displays an image based on which button is pressed.
@@ -42,7 +43,7 @@ BUTTONS = [SW_A, SW_B, SW_C, SW_D]
 LABELS = ["A", "B", "C", "D"]
 
 # Image drawing functions from inkyController.py
-IMAGE_FUNCTIONS = [draw_jjk_image, draw_demon_slayer_image, draw_mha_image, draw_fire_force_image]
+IMAGE_FUNCTIONS = [draw_jjk_image, draw_demon_slayer_image, draw_mha_image, write_to_display]
 
 # Create settings for all the input pins, we want them to be inputs
 # with a pull-up and a falling edge detection.
