@@ -28,3 +28,8 @@ def draw_mha_image():
     image = Image.open(EXAMPLE_ROOT / "images" / "mha.jpg")
     resized_image = image.resize(inky.resolution)
     show_image(resized_image)
+
+def draw_fire_force_image():
+    image = Image.open(EXAMPLE_ROOT / "images" / "fireForce.jpg")
+    resized_image = image.resize(inky.resolution)
+    show_image(resized_image)
