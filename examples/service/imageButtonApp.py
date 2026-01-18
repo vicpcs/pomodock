@@ -44,7 +44,6 @@ LABELS = ["A", "B", "C", "D"]
 
 # Image drawing functions from inkyController.py
 # IMAGE_FUNCTIONS = [write_to_display(), draw_demon_slayer_image, draw_mha_image, write_to_display('Have a great day!')]
-IMAGE_FUNCTIONS = [write_to_display('Button A Pressed'), write_to_display('Button B Pressed'), write_to_display('Button C Pressed'), write_to_display('Button D Pressed')]
 
 # Create settings for all the input pins, we want them to be inputs
 # with a pull-up and a falling edge detection.
@@ -71,7 +70,7 @@ def handle_button(event):
     label = LABELS[index]
     print(f"Button press detected on GPIO #{gpio_number} label: {label}")
     print("Drawing associated image...")
-    IMAGE_FUNCTIONS[index]()  # Call the appropriate image drawing function
+    write_to_display(f"Button {label} Pressed")  # Call the appropriate image drawing function
 
 
 while True:
