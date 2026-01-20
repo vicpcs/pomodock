@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
 # Configuration
+import sys
+from pathlib import Path
 EXAMPLE_DIR_ROOT = Path(__file__).resolve().parent.parent.parent
 IMAGE_DIR = EXAMPLE_DIR_ROOT / "images"
 sys.path.append(str(EXAMPLE_DIR_ROOT / "service"))
 STATE_FILE = Path.home() / ".eink_display_state.json"
 
-import sys
 import json
 import random
 from datetime import date
-from pathlib import Path
 from inkyController import draw_image
 
 assetList = sorted([
