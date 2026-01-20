@@ -2,7 +2,7 @@ import argparse
 import sys
 import time
 
-from inkyController import draw_jjk_image, draw_demon_slayer_image, draw_mha_image
+from writeToDisplay import write_to_display
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--duration", type=int, help="Duration of the timer in minutes")
@@ -17,24 +17,14 @@ def start_timer(duration_minutes):
     displayed_minutes_left = duration_minutes
     # While the current time - start_time (AKA the time elapsed) is less than the duration,
     # print the time remaining in minutes and change the image on the display
-    imageMethods = [draw_jjk_image, draw_demon_slayer_image, draw_mha_image]
-    imageMethods.pop(0)()  # Show the first image immediately
     while (time.time() - start_time) < duration_seconds:
         # Change the image every minute
         whole_minutes_left = int(duration_minutes - ((time.time() - start_time) // 60))
         
         if whole_minutes_left < displayed_minutes_left:
             displayed_minutes_left = whole_minutes_left
-            print(f"{displayed_minutes_left} minutes left")
-            # Change the image on the display
-            if imageMethods:
-                image_method = imageMethods.pop(0)
-                image_method()
-            else:
-                print("No more images to display. Skipping image change.")
-            
-
-
+            # Display the number of minutes left
+            write_to_display(f"{displayed_minutes_left} minutes left")
         time.sleep(1)
     print("time is up!")
 
