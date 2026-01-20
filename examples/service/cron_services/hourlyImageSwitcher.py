@@ -1,44 +1,21 @@
 #!/usr/bin/env python3
+# Configuration
+EXAMPLE_DIR_ROOT = Path(__file__).resolve().parent.parent.parent
+IMAGE_DIR = EXAMPLE_DIR_ROOT / "images"
+sys.path.append(str(EXAMPLE_DIR_ROOT / "service"))
+STATE_FILE = Path.home() / ".eink_display_state.json"
 
 import sys
 import json
 import random
 from datetime import date
 from pathlib import Path
-
-# Configuration
-STATE_FILE = Path.home() / ".eink_display_state.json"
-EXAMPLE_DIR_ROOT = Path(__file__).resolve().parent.parent.parent
-sys.path.append(str(EXAMPLE_DIR_ROOT / "service"))
-
 from inkyController import draw_image
 
-assetList = [
-    EXAMPLE_DIR_ROOT / "images" / "demonSlayer.jpg",
-    EXAMPLE_DIR_ROOT / "images" / "jjk.png",
-    EXAMPLE_DIR_ROOT / "images" / "mha.jpg",
-    EXAMPLE_DIR_ROOT / "images" / "fireForce.jpg",
-    EXAMPLE_DIR_ROOT / "images" / "HxHProtagonists.png",
-    EXAMPLE_DIR_ROOT / "images" / "mvc2SelectScreen.png",
-    EXAMPLE_DIR_ROOT / "images" / "busanNight.jpg",
-    EXAMPLE_DIR_ROOT / "images" / "busanDay.jpg",
-    EXAMPLE_DIR_ROOT / "images" / "chicagoSunlight.jpg",
-    EXAMPLE_DIR_ROOT / "images" / "camecuaro.jpg",
-    EXAMPLE_DIR_ROOT / "images" / "seoul.jpg",
-    EXAMPLE_DIR_ROOT / "images" / "hd2.png",
-    EXAMPLE_DIR_ROOT / "images" / "abudhabi.jpg",
-    EXAMPLE_DIR_ROOT / "images" / "dubaiNight.jpg",
-    EXAMPLE_DIR_ROOT / "images" / "parisNight.jpg",
-    EXAMPLE_DIR_ROOT / "images" / "daeguNight.jpg",
-    EXAMPLE_DIR_ROOT / "images" / "madrid.jpg",
-    EXAMPLE_DIR_ROOT / "images" / "pilsen.jpg",
-    EXAMPLE_DIR_ROOT / "images" / "fulton.jpg",
-    EXAMPLE_DIR_ROOT / "images" / "mtcc.jpg",
-    EXAMPLE_DIR_ROOT / "images" / "iitCampus.jpg",
-    EXAMPLE_DIR_ROOT / "images" / "oakPark.jpg",
-    EXAMPLE_DIR_ROOT / "images" / "wickerPark.jpg",
-    # Add your image paths here
-]
+assetList = sorted([
+    str(img) for img in IMAGE_DIR.glob("*")
+    if img.suffix.lower() in ['.png', '.jpg', '.jpeg', '.bmp']
+])
 
 def load_state():
     """Load the current state from file."""
