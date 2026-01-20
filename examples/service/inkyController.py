@@ -9,7 +9,7 @@ def show_image(resized_image):
     print("Displaying image on Inky...")
     print(resized_image)
     try:
-        inky.set_image(resized_image, saturation=0)
+        inky.set_image(resized_image, saturation=0.5)
     except TypeError:
         inky.set_image(resized_image)
     inky.show()
