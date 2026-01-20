@@ -15,6 +15,9 @@ def start_timer(duration_minutes):
     # Capture the timestamp the timer was started 
     start_time = time.time()
     displayed_minutes_left = duration_minutes
+
+    # Display the top of the count
+    write_to_display(f"Starting {duration_minutes} minute timer")
     # While the current time - start_time (AKA the time elapsed) is less than the duration,
     # print the time remaining in minutes and change the image on the display
     while (time.time() - start_time) < duration_seconds:
