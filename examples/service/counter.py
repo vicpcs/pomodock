@@ -27,9 +27,9 @@ def start_timer(duration_minutes):
         if whole_minutes_left < displayed_minutes_left:
             displayed_minutes_left = whole_minutes_left
             # Display the number of minutes left
-            write_to_display(f"{displayed_minutes_left} minutes left")
+            write_to_display(f"{displayed_minutes_left} minute{"s" if displayed_minutes_left > 1 else ""} left")
         time.sleep(1)
-    print("time is up!")
+    write_to_display("Time's up!")
 
 # Parse command line arguments, discard unknown args
 args, _ = parser.parse_known_args()
