@@ -3,7 +3,6 @@
 import gpiod
 import gpiodevice
 from gpiod.line import Bias, Direction, Edge
-from inkyController import draw_jjk_image, draw_demon_slayer_image, draw_mha_image, draw_fire_force_image
 from writeToDisplay import write_to_display
 
 print(
